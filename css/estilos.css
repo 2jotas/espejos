@@ -9,7 +9,7 @@ html, body {
   color: #fff;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -258,15 +258,50 @@ body {
    Responsive
    ========================= */
 @media (max-width: 900px) {
-  .vertical-dotted.left { left: 10vw; }
-  .vertical-dotted.right { right: 10vw; }
-  .center-block { left: 10vw; right: 10vw; }
-  .title { font-size: 5vw; }
-  .signature { font-size: 5vw; }
-  .line-horizontal.top { right: 28px; }
-  .line-horizontal.bottom { left: 28px; }
-  .star { width: 28px; height: 28px; }
-  .star.top { top: 26px; }
-  .star.bottom { bottom: 26px; }
-  .side-container, .calendar-container { width: 100vw; left: 0; right: 0; border-radius: 0; }
+  html, body {
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw;
+    position: static;
+    overflow-y: auto;
+  }
+  .vertical-dotted.left, .vertical-dotted.right,
+  .line-horizontal.top, .line-horizontal.bottom,
+  .star.top, .star.bottom, .signature {
+    display: none !important;
+  }
+  .side-container, .center-block, .calendar-container {
+    position: static !important;
+    width: 100vw !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    z-index: auto !important;
+    min-height: unset;
+    max-width: 100vw;
+    display: block;
+    padding: 24px 0 24px 0;
+  }
+  .center-block {
+    margin: 0;
+    padding: 24px 0 24px 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .title { font-size: 7vw; }
+  .arrows svg { width: 60px; height: 60px; }
+  .usdclp-indicador, .btc-indicador { font-size: 5vw; }
 }

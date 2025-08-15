@@ -1,0 +1,272 @@
+/* =========================
+   Estilos generales
+   ========================= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+/* =========================
+   Líneas horizontales
+   ========================= */
+.line-horizontal {
+  position: absolute;
+  height: 0;
+  border-top: 2px solid #fff;
+  z-index: 10;
+  display: block;
+}
+.line-horizontal.top {
+  top: 40px;
+  left: 0;
+  right: 46px; /* 36px ancho estrella + 10px espacio */
+}
+.line-horizontal.bottom {
+  bottom: 40px;
+  left: 46px;  /* 36px ancho estrella + 10px espacio */
+  right: 0;
+}
+
+/* =========================
+   Estrellas
+   ========================= */
+.star {
+  font-size: 2rem;
+  color: #fff;
+  filter: drop-shadow(0 0 2px #fff);
+  font-family: Arial, sans-serif;
+  z-index: 11;
+  position: absolute;
+  background: transparent;
+  pointer-events: none;
+  padding: 0;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.star.top {
+  top: 22px;
+  right: 10px; /* 10px de espacio al borde */
+}
+.star.bottom {
+  bottom: 22px;
+  left: 10px;  /* 10px de espacio al borde */
+}
+
+/* =========================
+   Líneas verticales punteadas
+   ========================= */
+.vertical-dotted {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  width: 0;
+  border-left: 3px dashed #fff;
+  opacity: 0.8;
+  z-index: 9;
+}
+.vertical-dotted.left { left: 32%; }
+.vertical-dotted.right { right: 32%; }
+
+/* =========================
+   Bloque lateral (login)
+   ========================= */
+.side-container {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  left: 0;
+  width: 28%;
+  background: rgba(20,20,20,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 2px 0 12px #0008;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 80%;
+  max-width: 320px;
+  background: transparent;
+  color: #fff;
+}
+.login-form input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+}
+.login-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #ff9900;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.login-form button:hover {
+  background: #ff5500;
+}
+.login-msg {
+  min-height: 20px;
+  color: #ffb300;
+  font-size: 0.95em;
+}
+
+/* =========================
+   Bloque central
+   ========================= */
+.center-block {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  left: 32%;
+  right: 32%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+.title {
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 2vw;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: normal;
+}
+
+/* =========================
+   Flechas SVG
+   ========================= */
+.arrows {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.arrows svg {
+  width: 80px;
+  height: 80px;
+  margin: 0 -6px;
+  display: block;
+  transition: filter 0.2s;
+  cursor: pointer;
+  background: transparent;
+}
+.arrows svg:nth-child(1) { opacity: 0.3; }
+.arrows svg:nth-child(2) { opacity: 0.6; }
+.arrows svg:nth-child(3) { opacity: 1; }
+.arrows svg:hover {
+  filter: brightness(1.7) drop-shadow(0 0 18px #FFD700) drop-shadow(0 0 32px #C28813);
+  z-index: 1;
+}
+
+/* =========================
+   Indicadores económicos
+   ========================= */
+.usdclp-indicador,
+.btc-indicador {
+  margin-top: 10px;
+  font-size: 1.2vw;
+  color: #fff;
+  background: rgba(17,17,17,0.85);
+  padding: 6px 18px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Oswald', Arial, sans-serif;
+  letter-spacing: 0.04em;
+  display: inline-block;
+}
+@media (max-width: 900px) {
+  .usdclp-indicador,
+  .btc-indicador { font-size: 3vw; }
+}
+
+/* =========================
+   Firma
+   ========================= */
+.signature {
+  position: fixed;
+  right: 32px;
+  bottom: 0;
+  z-index: 30;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2vw;
+  text-align: right;
+  pointer-events: none;
+  opacity: 0.9;
+  white-space: nowrap;
+  line-height: 1;
+  text-shadow: 0 0 6px #000;
+  padding-top: 18px;
+}
+
+/* =========================
+   Tercer contenedor (vacío por ahora)
+   ========================= */
+.calendar-container {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  right: 0;
+  width: 28%;
+  background: rgba(20,20,20,0.85);
+  border-radius: 20px 0 0 20px;
+  box-shadow: -2px 0 12px #0008;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 900px) {
+  .vertical-dotted.left { left: 10vw; }
+  .vertical-dotted.right { right: 10vw; }
+  .center-block { left: 10vw; right: 10vw; }
+  .title { font-size: 5vw; }
+  .signature { font-size: 5vw; }
+  .line-horizontal.top { right: 28px; }
+  .line-horizontal.bottom { left: 28px; }
+  .star { width: 28px; height: 28px; }
+  .star.top { top: 26px; }
+  .star.bottom { bottom: 26px; }
+  .side-container, .calendar-container { width: 100vw; left: 0; right: 0; border-radius: 0; }
+}

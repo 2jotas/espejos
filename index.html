@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Refleja tu mejor versión</title>
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <!-- Línea superior y estrella -->
+    <div class="line-horizontal top"></div>
+    <span class="star top">&#10022;</span>
+
+    <!-- Línea inferior y estrella -->
+    <div class="line-horizontal bottom"></div>
+    <span class="star bottom">&#10022;</span>
+
+    <!-- Líneas verticales punteadas -->
+    <div class="vertical-dotted left"></div>
+    <div class="vertical-dotted right"></div>
+
+    <!-- Bloque lateral para el formulario de inicio de sesión -->
+    <div class="side-container" id="side-container">
+        <form id="login-form" class="login-form">
+            <h2>Iniciar sesión</h2>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
+            <label for="password">Clave:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Entrar</button>
+            <div id="login-msg" class="login-msg"></div>
+        </form>
+    </div>
+
+    <!-- Bloque central con título, flechas e indicadores -->
+    <div class="center-block">
+        <div class="title">
+            REFLEJA TU MEJOR VERSIÓN
+        </div>
+        <div class="arrows">
+            <!-- SVG Flecha 1 -->
+            <svg viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ff9900"/>
+                        <stop offset="100%" stop-color="#ff5500"/>
+                    </linearGradient>
+                </defs>
+                <polyline points="20,20 60,50 20,80"
+                    fill="none" stroke="url(#grad1)" stroke-width="32"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <!-- SVG Flecha 2 -->
+            <svg viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ff9900"/>
+                        <stop offset="100%" stop-color="#ff5500"/>
+                    </linearGradient>
+                </defs>
+                <polyline points="20,20 60,50 20,80"
+                    fill="none" stroke="url(#grad2)" stroke-width="32"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <!-- SVG Flecha 3 -->
+            <svg viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ff9900"/>
+                        <stop offset="100%" stop-color="#ff5500"/>
+                    </linearGradient>
+                </defs>
+                <polyline points="20,20 60,50 20,80"
+                    fill="none" stroke="url(#grad3)" stroke-width="32"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Indicador USD/CLP debajo de las flechas -->
+        <div class="usdclp-indicador" id="usdclp-indicador">
+            Cargando USD/CLP...
+        </div>
+        <!-- Indicador BTC/USD debajo del USD/CLP -->
+        <div class="btc-indicador" id="btc-indicador">
+            Cargando BTC/USD...
+        </div>
+        <!-- Firma debajo de la línea inferior, parte derecha de la pantalla -->
+        <div class="signature">
+            John Ortiz
+        </div>
+    </div>
+
+    <!-- Scripts externos -->
+    <script src="./js/dolar.js"></script>
+    <script src="./js/btc.js"></script>
+    <script src="./js/usuarios.js"></script>
+</body>
+</html>
